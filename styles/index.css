@@ -1,5 +1,5 @@
 body {
-    background-image: url("images/indexbg.png");
+    background-image: url("../images/indexbg.png");
     background-size: cover;
     background-repeat: no-repeat;
     overflow-x: hidden;
@@ -20,7 +20,7 @@ body {
 
 .main-container {
     text-align: center;
-    padding-top: 41%;
+    padding-top: 43%;
     padding-left: 6.5%;
     display: inline-flex;
     flex-direction: row;
