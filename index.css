@@ -6,10 +6,22 @@ body {
     background-attachment: scroll;
 }
 
+.wallet-container {
+    padding-top: 0.5%;
+    padding-left: 4%;
+}
+
+.wallet {
+    color: #ffffff;
+    background-color: #7ad21b;
+    text-decoration: none;
+    font-size: 7vw;
+}
+
 .main-container {
     text-align: center;
-    padding-top: 61%;
-    padding-left: 5.5%;
+    padding-top: 41%;
+    padding-left: 6.5%;
     display: inline-flex;
     flex-direction: row;
 }
