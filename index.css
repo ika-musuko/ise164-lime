@@ -1,0 +1,34 @@
+body {
+    background-image: url("images/indexbg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    background-attachment: scroll;
+}
+
+.main-container {
+    text-align: center;
+    padding-top: 61%;
+    padding-left: 5.5%;
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.main-container * {
+    margin: 0.6vw;
+}
+
+.index-btn {
+    width: 28vw;
+}
+
+#ring {
+}
+
+#estimate {
+}
+
+#report {
+}
+
+

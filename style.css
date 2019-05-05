@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'acherus';
+    src: url('fonts/acherusgrotesque-regular-webfont.woff2') format('woff2'),
+         url('fonts/acherusgrotesque-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* { 
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "acherus"
+}
+
+.bg {
+    max-width: 100%;
+    height: auto;
+    z-index: -1;
+}
+
+.bg-container {
+    position: relative;
+}
+
+.btn {
+    font-size: 2.8vw;
+    border-radius: 1vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+}
+
+.btn-white {
+    color: #05c500;
+    text-decoration: none;
+    border-style: solid;
+    border-width: 0.5vw;
+}
+
+.btn-green {
+    background-color: #05c500;
+    color: #ffffff;
+    border-style: solid;
+    border-width: 0.5vw;
+    border-color: #05c500;
+}
+
