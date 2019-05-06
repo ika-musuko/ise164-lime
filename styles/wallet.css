@@ -12,7 +12,7 @@ body {
 }
 
 .wallet-bottom-filler {
-    height: 110vw;
+    height: 56vh;
 }
 
 .money-container {
@@ -20,15 +20,31 @@ body {
     display: inline-grid;
     grid-auto-flow: dense;
     align-items: center;
-    grid-template-columns: 10vw auto;
+    grid-template-columns: 10vw 100vw;
 }
 
 .money-container label {
     grid-column: 2;
+    font-size: 6vw;
+}
+
+.money-container input {
+    padding-left: 10%;
+    width:  6vw;
+    height: 6vw;
 }
 
 .money-container * {
     width: 10vw;
+}
+
+.money-custom-container {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.money-custom-input {
+    font-size: 6vw;
 }
 
 .auto-reload-container label {
