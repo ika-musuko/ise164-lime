@@ -26,6 +26,7 @@
         // get canvas and context
         let canvas = document.getElementById("click-area");
         let context = canvas.getContext("2d");
+        let canvasBox = canvas.getBoundingClientRect();
 
         // clear old lines
         context.clearRect(0, 0, canvas.width, canvas.height);
@@ -35,10 +36,16 @@
         context.beginPath();
 
         // center
-        context.moveTo(77.5, 38);
+        let cx = canvasBox.width/2 + canvasBox.left;
+        let cy = canvasBox.height/2 + canvasBox.top;
+        // transform cx and cy
+        cx /= canvasBox.width;
+        cy /= canvasBox.height;
+        cx *= canvas.width;
+        cy *= canvas.height;
+        cy -= 55; // ensure cy is on starting pin
+        context.moveTo(cx, cy);
 
-        // fix end coordinates (where the tap was)
-        let canvasBox = canvas.getBoundingClientRect();
         // the dimensions of canvasBox and canvas are different so fix it
         let endX = e.offsetX / canvasBox.width * canvas.width;
         let endY = e.offsetY / canvasBox.height * canvas.height;
