@@ -9,11 +9,9 @@
       <a href="wallet.html" class="wallet">&#x1f4b0;</a>
     </div>
     <div class="main">
-      <div id="estimate">
-        <div class="container estimate-container">
-          <div class="bold">Where would you like to go?</div>
-          <div>Please set pin on the map to receive a Lime price estimate.</div>
-        </div>
+      <div id="estimate" class="container estimate-container">
+        <div class="bold">Where would you like to go?</div>
+        <div>Please set pin on the map to receive a Lime price estimate.</div>
       </div>
       <div class="container btn-container estimate-btn-container">
         <a href="index.html" id="report" class="btn index-btn btn-green">Back</a>
@@ -22,7 +20,45 @@
       </canvas>
     </div>
     <script>
+
       function placePin(e) {
+        let distance = drawLineAndPin(e);
+        changeModal(distance);
+      }
+
+      function changeModal(distance) {
+        let modal = document.getElementById("estimate"); 
+
+        // clear content
+        modal.innerHTML = "";
+        modal.classList.remove("container");
+
+        // create distance child
+        let distDiv = document.createElement("div");
+        let realDist = distance / 72;
+        realDist = Math.round(realDist * 100) / 100
+        distDiv.innerHTML = "Distance: " + realDist + " mi";
+
+        // create estimated cost child
+        let costDiv = document.createElement("div");
+        costDiv.classList.add("bold");
+        let cost = 1 + (realDist * 0.15);
+        cost = Math.round(cost * 100) / 100;
+        costDiv.innerHTML = "Estimated Cost: $" + cost;
+
+        // create some space
+        let spaceDiv = document.createElement("br");
+
+        // append the new children
+        modal.appendChild(costDiv);
+        modal.appendChild(distDiv);
+        modal.appendChild(spaceDiv);
+
+        // fix margin
+        modal.style.paddingLeft = "32%";
+      }
+
+      function drawLineAndPin(e) {
         // get canvas and context
         let canvas = document.getElementById("click-area");
         let context = canvas.getContext("2d");
@@ -63,6 +99,12 @@
         context.lineWidth = 1;
         context.strokeStyle = '#003300';
         context.stroke();
+
+        // return distance
+        let dx = cx - endX;
+        let dy = cy - endY;
+        let distance = Math.sqrt(dx*dx + dy*dy);
+        return distance;
       }
     </script>
   </body>
