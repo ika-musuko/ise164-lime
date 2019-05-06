@@ -46,13 +46,13 @@
         cost = Math.round(cost * 100) / 100;
         costDiv.innerHTML = "Estimated Cost: $" + cost;
 
-        // create some space
-        let spaceDiv = document.createElement("br");
 
         // append the new children
         modal.appendChild(costDiv);
         modal.appendChild(distDiv);
-        modal.appendChild(spaceDiv);
+        // create some space
+        modal.appendChild(document.createElement("br"));
+        modal.appendChild(document.createElement("br"));
 
         // fix margin
         modal.style.paddingLeft = "32%";
