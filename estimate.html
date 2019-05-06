@@ -37,13 +37,12 @@
 
         // center
         let cx = canvasBox.width/2 + canvasBox.left;
-        let cy = canvasBox.height/2 + canvasBox.top;
+        let cy = canvasBox.top/2.4;
         // transform cx and cy
         cx /= canvasBox.width;
         cy /= canvasBox.height;
         cx *= canvas.width;
         cy *= canvas.height;
-        cy -= 55; // ensure cy is on starting pin
         context.moveTo(cx, cy);
 
         // the dimensions of canvasBox and canvas are different so fix it
