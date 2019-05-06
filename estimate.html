@@ -10,13 +10,22 @@
       <a href="wallet.html" onclick="return false;" class="wallet">&#x1f4b0;</a>
     </div>
     <div class="main">
-      <div class="container estimate-container">
-        <div class="bold">Where would you like to go?</div>
-        <div>Please set pin on the map to receive a Lime price estimate.</div>
+      <div id="estimate">
+        <div class="container estimate-container">
+          <div class="bold">Where would you like to go?</div>
+          <div>Please set pin on the map to receive a Lime price estimate.</div>
+        </div>
       </div>
       <div class="container btn-container estimate-btn-container">
         <a href="index.html" id="report" class="btn index-btn btn-green">Back</a>
       </div>
+      <div class="bottom-filler click-area" onclick="placePin()">
+      </div>
     </div>
+    <script>
+      function placePin() {
+        alert("pin place");
+      }
+    </script>
   </body>
 </html>

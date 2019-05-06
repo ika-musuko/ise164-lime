@@ -23,3 +23,8 @@ body {
 .estimate-btn-container {
     padding-top: 4%;
 }
+
+.click-area {
+    padding-top: 3%;
+    height: 100vw;
+}
