@@ -7,8 +7,8 @@ body {
 }
 
 .estimate-container {
-    padding-top: 21%;
-    padding-left: 15.5%;
+    padding-top: 18%;
+    padding-left: 0.5%;
     flex-direction: column;
 }
 
@@ -16,6 +16,10 @@ body {
     margin: 0.6vw;
 }
 
+.estimate-container div {
+    font-size: 3.6vw;
+}
+
 .estimate-btn-container {
-    padding-top: 10%;
+    padding-top: 4%;
 }
