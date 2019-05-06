@@ -26,6 +26,7 @@
         // get canvas and context
         let canvas = document.getElementById("click-area");
         let context = canvas.getContext("2d");
+        //context.scale(2, 1);
         let canvasBox = canvas.getBoundingClientRect();
 
         // clear old lines
@@ -51,6 +52,16 @@
 
         // actually draw the line
         context.lineTo(endX, endY);
+        context.stroke();
+
+        // draw a dot at the endpoint
+        let radius = 3;
+        context.beginPath();
+        context.arc(endX, endY, radius, 0, 2 * Math.PI, false);
+        context.fillStyle = 'green';
+        context.fill();
+        context.lineWidth = 1;
+        context.strokeStyle = '#003300';
         context.stroke();
       }
     </script>
