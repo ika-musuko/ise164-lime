@@ -1,0 +1,44 @@
+body {
+    background-image: url("../images/walletbg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    background-attachment: scroll;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.wallet-bottom-filler {
+    height: 110vw;
+}
+
+.money-container {
+    padding-top: 40%;
+    display: inline-grid;
+    grid-auto-flow: dense;
+    align-items: center;
+    grid-template-columns: 10vw auto;
+}
+
+.money-container label {
+    grid-column: 2;
+}
+
+.money-container * {
+    width: 10vw;
+}
+
+.auto-reload-container label {
+    font-size: 4vw;
+    font-weight: bold;
+    padding-top: 5%;
+    padding-left: 3%;
+}
+
+.auto-reload-container label.switch {
+    margin-left: 56%;
+    margin-top: 5%;
+}
