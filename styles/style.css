@@ -10,7 +10,8 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: "acherus"
+    font-family: "acherus";
+    color: #222222;
 }
 
 .bg {
@@ -28,11 +29,11 @@
     border-radius: 1vw;
     padding-top: 1vw;
     padding-bottom: 1vw;
+    text-decoration: none;
 }
 
 .btn-white {
     color: #05c500;
-    text-decoration: none;
     border-style: solid;
     border-width: 0.5vw;
 }

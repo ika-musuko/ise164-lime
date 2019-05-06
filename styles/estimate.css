@@ -1,0 +1,21 @@
+body {
+    background-image: url("../images/estimatebg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    background-attachment: scroll;
+}
+
+.estimate-container {
+    padding-top: 21%;
+    padding-left: 15.5%;
+    flex-direction: column;
+}
+
+.estimate-container * {
+    margin: 0.6vw;
+}
+
+.estimate-btn-container {
+    padding-top: 10%;
+}
