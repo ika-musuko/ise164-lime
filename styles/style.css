@@ -143,6 +143,12 @@ input:checked + .slider:before {
 }
 
 /* radio button styling */
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 input[type='radio']:after {
     width: 5vw;
     height: 5vw;
