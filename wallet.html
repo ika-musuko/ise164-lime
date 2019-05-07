@@ -4,13 +4,13 @@
     <link rel="stylesheet" href="styles/style.css" type="text/css">
     <link rel="stylesheet" href="styles/wallet.css" type="text/css">
   </head>
-  <body onload="setDollarAmount();">
+  <body onload="init();">
     <div class=wallet-"container">
       <a href="index.html" class="wallet">&#x2190;</a>
     </div>
     <div class="main">
       <div class="add-amount-container">
-        <div id="add-amount">$0.00</div>
+        <div id="current-balance">$0.00</div>
       </div>
       <div id="dollars" class="money-container">
         <input type="radio" name="dollars" value="5.00" class="money-select"> 
@@ -38,15 +38,27 @@
     <div class="wallet-bottom-filler">
     </div>
     <script>
+      var currentBalance = 9.40;
+
+      function init() {
+        let formattedCurrentBalance = formatDollar(currentBalance);
+        document.getElementById("current-balance").innerHTML = "$" + formattedCurrentBalance;
+      }
+
+      function formatDollar(val) {
+        return parseFloat(Math.round(val * 100) / 100).toFixed(2);
+      }
+
       function setDollarAmount() {
-        let addAmount = document.getElementById("add-amount");
+        let currentBalanceDiv = document.getElementById("current-balance");
         let result = document.querySelector("input[name='dollars']:checked").value;
         if (parseFloat(result) === parseFloat(0.00)) {
           let dollarInput = document.getElementById("dollar-input");
           result = dollarInput.value;
         }
-        let formattedResult = parseFloat(Math.round(result * 100) / 100).toFixed(2);
-        addAmount.innerHTML = "$" + formattedResult;
+        currentBalance += parseFloat(result);
+        let formattedCurrentBalance = formatDollar(currentBalance); 
+        currentBalanceDiv.innerHTML = "$" + formattedCurrentBalance;
       }
 
     </script>
