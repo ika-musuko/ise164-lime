@@ -20,11 +20,12 @@ body {
     position: absolute;
     text-align: center;
     width: 100%;
-    margin-top: 31%;
+    margin-top: 11%;
 }
 
 #add-amount {
     font-weight: 900;
+    font-size: 10vw;
     color: #7ad21b;
 }
 
