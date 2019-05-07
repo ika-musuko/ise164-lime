@@ -4,6 +4,7 @@ body {
     background-repeat: no-repeat;
     overflow-x: hidden;
     background-attachment: scroll;
+    background-color: #f7f7f7;
 }
 
 .main {
