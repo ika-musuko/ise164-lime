@@ -7,6 +7,10 @@ body {
     background-color: #f7f7f7;
 }
 
+.wallet-bottom-filler {
+    height: 110vw;
+}
+
 .main {
     display: flex;
     flex-direction: column;
