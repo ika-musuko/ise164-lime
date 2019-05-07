@@ -24,19 +24,23 @@
     padding-top: 1vw;
     padding-bottom: 1vw;
     text-decoration: none;
+    border-width: 0.5vw;
+    border-style: solid;
 }
 
 .btn-white {
     color: #05c500;
-    border-style: solid;
-    border-width: 0.5vw;
 }
 
 .btn-green {
     background-color: #05c500;
     color: #ffffff;
-    border-style: solid;
-    border-width: 0.5vw;
+    border-color: #05c500;
+}
+
+.btn-lime {
+    background-color: #7ad21b;
+    color: #ffffff;
     border-color: #05c500;
 }
 

@@ -45,6 +45,10 @@ body {
 
 .money-custom-input {
     font-size: 6vw;
+    width: 20vw !important;
+    margin-top: 2vw;
+    padding-bottom: 1vw;
+    border-radius: 1vw;
 }
 
 .auto-reload-container label {
