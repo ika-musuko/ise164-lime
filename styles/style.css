@@ -141,3 +141,29 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+/* radio button styling */
+input[type='radio']:after {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 3vw;
+    position: relative;
+    background-color: #cccccc;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 0.5vw solid white;
+}
+
+input[type='radio']:checked:after {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 3vw;
+    position: relative;
+    background-color: #7ad21b;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 0.5vw solid white;
+}
+
