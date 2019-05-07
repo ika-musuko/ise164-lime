@@ -29,12 +29,14 @@
       <div class="container auto-reload-container">
         <label>Auto-Reload</label>
         <label class="switch">
-          <input type="checkbox">
+          <input id="auto-reload" type="checkbox">
           <span class="slider round"></span>
         </label>
       </div>
     </div>
-    <div id="add" onclick="setDollarAmount();" class="btn btn-lime">ADD</div>
+    <div class="auto-reload-info">Your auto-reload currently adds <span id="current-auto-reload">$10.00</span> once your balance reaches $0 or less. To update your amount option, select a value above and click "Update Auto-Reload"</div>
+    <div id="add" onclick="updateCurrentBalance();" class="btn btn-lime">ADD</div>
+    <div id="update-auto-reload" onclick="updateAutoReload();" class="btn btn-white">Update Auto-Reload</div>
     <div class="wallet-bottom-filler">
     </div>
     <script>
@@ -49,16 +51,28 @@
         return parseFloat(Math.round(val * 100) / 100).toFixed(2);
       }
 
-      function setDollarAmount() {
-        let currentBalanceDiv = document.getElementById("current-balance");
+      function getInputValue() {
         let result = document.querySelector("input[name='dollars']:checked").value;
         if (parseFloat(result) === parseFloat(0.00)) {
           let dollarInput = document.getElementById("dollar-input");
           result = dollarInput.value;
         }
+
+        return result;
+      }
+
+      function updateCurrentBalance() {
+        let currentBalanceDiv = document.getElementById("current-balance");
+        let result = getInputValue();
         currentBalance += parseFloat(result);
         let formattedCurrentBalance = formatDollar(currentBalance); 
         currentBalanceDiv.innerHTML = "$" + formattedCurrentBalance;
+      }
+
+      function updateAutoReload() {
+        let result = getInputValue();
+        let autoReloadAmount = formatDollar(result);
+        document.getElementById("current-auto-reload").innerHTML = "$" + autoReloadAmount;
       }
 
     </script>
