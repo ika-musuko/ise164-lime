@@ -61,3 +61,17 @@ body {
     margin-left: 56%;
     margin-top: 5%;
 }
+
+#add {
+    font-weight: 900;
+    text-align: center;
+    margin-top: 38%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 4%;
+}
+
+#add:active {
+    background-color: #6ac20b;
+    border-color: #6ac20b;
+}
