@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="styles/style.css" type="text/css">
     <link rel="stylesheet" href="styles/wallet.css" type="text/css">
   </head>
-  <body>
+  <body onload="setDollarAmount();">
     <div class=wallet-"container">
       <a href="index.html" class="wallet">&#x2190;</a>
     </div>
@@ -12,16 +12,16 @@
       <div class="add-amount-container">
         <div id="add-amount">$0.00</div>
       </div>
-      <div class="money-container">
-        <input type="radio" name="dollars" class="money-select"> 
+      <div id="dollars" class="money-container">
+        <input type="radio" name="dollars" value="5.00" class="money-select"> 
         <label>$5</label>
-        <input type="radio" name="dollars" class="money-select"> 
+        <input type="radio" checked="checked" value="10.00" name="dollars" class="money-select"> 
         <label>$10</label>
-        <input type="radio" name="dollars" class="money-select"> 
+        <input type="radio" name="dollars" value="20.00" class="money-select"> 
         <label>$20</label>
-        <input type="radio" name="dollars" class="money-select"> 
+        <input type="radio" name="dollars" value="0.00" class="money-select"> 
         <div class="money-custom-container">
-          <label>$</label><input class="money-custom-input" type="number" min="0.01" step="0.01" value="8.00">
+          <label>$</label><input id="dollar-input" class="money-custom-input" type="number" min="0.01" step="0.01" value="8.00">
         </div>
       </div>
       <div style="height: 10vw">
@@ -34,8 +34,21 @@
         </label>
       </div>
     </div>
-    <div id="add" class="btn btn-lime">ADD</div>
+    <div id="add" onclick="setDollarAmount();" class="btn btn-lime">ADD</div>
     <div class="wallet-bottom-filler">
     </div>
+    <script>
+      function setDollarAmount() {
+        let addAmount = document.getElementById("add-amount");
+        let result = document.querySelector("input[name='dollars']:checked").value;
+        if (parseFloat(result) === parseFloat(0.00)) {
+          let dollarInput = document.getElementById("dollar-input");
+          result = dollarInput.value;
+        }
+        let formattedResult = parseFloat(Math.round(result * 100) / 100).toFixed(2);
+        addAmount.innerHTML = "$" + formattedResult;
+      }
+
+    </script>
   </body>
 </html>
